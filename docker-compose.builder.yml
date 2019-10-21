@@ -1,0 +1,23 @@
+version: '3.5'
+services:  
+
+  install-vanbora-env:
+    image: node:8.13.0
+    volumes:
+      - .:/home/node/vanbora-env/
+    working_dir: /home/node/vanbora-env/
+    command: sh -c "yarn install"
+  
+  install-app:
+    image: node:8.13.0
+    volumes:
+      - ./app/:/home/node/vanbora-env/app/
+    working_dir: /home/node/vanbora-env/app/
+    command: sh -c "yarn install"
+  
+  install-api:
+    image: node:8.13.0
+    volumes:
+      - ./API/:/home/node/vanbora-env/API/
+    working_dir: /home/node/vanbora-env/API/
+    command: sh -c "cd functions && yarn install"

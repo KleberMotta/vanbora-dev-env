@@ -1,0 +1,19 @@
+{
+  "name": "vanbora-dev-env",
+  "version": "1.0.0",
+  "description": "Ambiente de desenvolvimento do vanbora utilizando docker-compose",
+  "scripts": {
+    "dev:react": "cd app && yarn start",
+    "dev:serve": "cd API/functions && firebase serve -p 3000 --debug -o 0.0.0.0",
+    "prod:deploy": "cd API/functions && yarn deploy",
+    "docker:builder": "docker volume create --name=nodemodules && docker-compose -f docker-compose.yml -f docker-compose.builder.yml up",
+    "docker:react": "docker-compose -f docker-compose.yml -f docker-compose.dev-react.yml up",
+    "docker:serve": "docker-compose -f docker-compose.yml -f docker-compose.serve.yml up",
+    "docker:deploy": "docker-compose -f docker-compose.yml -f docker-compose.deploy.yml up",
+    "docker:down": "docker-compose down -v"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "react-native-cli": "2.0.1"
+  }
+}

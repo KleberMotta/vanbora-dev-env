@@ -1,0 +1,14 @@
+version: '3.5'
+services:
+  vanbora-env:
+    volumes:
+      - .:/home/node/vanbora-env
+      - ./firebase.dot.config:/home/node/.config     
+    command: sh -c "yarn dev:react"
+    environment:
+      NODE_ENV: '${NODE_ENV}'
+      GOOGLE_APPLICATION_CREDENTIALS: '${GOOGLE_APPLICATION_CREDENTIALS}'
+      FIREBASE_TOKEN: '${FIREBASE_TOKEN}'
+    ports:
+      - '8081:8081'
+      - '5000:5000'
