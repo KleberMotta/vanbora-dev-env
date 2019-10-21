@@ -6,9 +6,3 @@ services:
       context: .
       dockerfile: Dockerfile
       target: imagem_base
-    volumes:
-      - nodemodules:/home/node/vanbora-env/node_modules
-
-volumes:
-  nodemodules:
-    external: true
