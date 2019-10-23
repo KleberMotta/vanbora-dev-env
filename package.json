@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Ambiente de desenvolvimento do vanbora utilizando docker-compose",
   "scripts": {
-    "dev:react": "cd app && yarn start",
+    "dev:react": "cd app && yarn start --port 8082",
     "dev:serve": "cd API/functions && yarn serve",
     "prod:deploy": "cd API/functions && yarn deploy",
     "docker:builder": "docker-compose -f docker-compose.yml -f docker-compose.builder.yml up",
